@@ -214,7 +214,7 @@
 
                 <!-- Percepções sobre meu Trabalho (Individual Cards) -->
                 <section id="perceptions">
-                    <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">Percepções sobre meu Trabalho</h2>
+                    <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">Feedbacks</h2>
                     <div class="perceptions-grid">
                         <!-- Perception cards will be injected by JS -->
                     </div>
@@ -252,7 +252,7 @@
                     <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">Certificações</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
-                            <img src="https://brasilopenbadge.com.br/badge/5024.png?nocache=388723304" alt="Batalha de Dados" class="rounded-md w-16 h-16">
+                            <img src="https://images.credly.com/images/a7e0490e-d2c5-4b8e-abd4-25d950066bda/image.png" alt="Batalha de Dados" class="rounded-md w-16 h-16">
                             <p class="text-stone-700 font-medium text-xs">Batalha de Dados</p>
                         </div>
                         <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
@@ -329,21 +329,23 @@
                     technologies: ["Python", "AWS", "API Integration", "Arquitetura Modular", "IA Generativa", "Chatbot"],
                     link: "#"
                 },    
-                //  {
-                //     title: "Descision ML (Projeto de MBA)",
-                //     description: "",
-                //     // image: "",
-                //     // imageAlt: "Diagrama do fluxo de desenvolvimento do chatbot analítico, mostrando a integração com o Data Mesh e os componentes principais.",
-                //     // diagramDescription: "Este diagrama conceitua o fluxo de desenvolvimento do chatbot analítico, destacando a integração com o Data Mesh e os principais componentes envolvidos. Ele ilustra como os dados são processados e apresentados ao usuário final através da interface do chatbot.",
-                //     details: [
-                //         "",
-                //         "",
-                //         "",
-                //         ""
-                //     ],
-                //     technologies: ["Python", "AWS", "API Integration", "Arquitetura Modular", "IA Generativa", "Chatbot"],
-                //     link: "#"
-                // },
+                {
+                title: "Plataforma de Matching de Candidatos - Projeto MBA",
+                description: "Solução completa de Machine Learning Engineering desenvolvida para o case da empresa Decision, unificando múltiplos modelos para previsão de match, com foco em arquitetura escalável e integração de ponta a ponta.",
+                // image: "",
+                // imageAlt: "Diagrama do pipeline de engenharia e modelos do projeto Decision.",
+                // diagramDescription: "Este diagrama representa a arquitetura modular e escalável do projeto Decision, destacando os fluxos de ingestão, preparação de dados, inferência dos modelos e disponibilização via API com monitoramento.",
+                details:  [
+                    "Desenhei e implementei uma arquitetura modular e escalável para orquestrar múltiplos componentes de machine learning, contemplando pipelines de pré-processamento, inferência e disponibilização via APIs.",
+                    "Desenvolvi um modelo supervisionado de classificação focado em previsão de match entre candidatos e vagas, aplicando técnicas de engenharia de atributos e validação cruzada com métricas orientadas ao negócio.",
+                    "Automatizei a ingestão e transformação de dados complexos em JSON, unificando múltiplas fontes (prospects, applicants e vagas) em uma estrutura flat robusta para consumo analítico e preditivo.",
+                    "Implementei endpoints REST com FastAPI e estrutura de versionamento via GitHub, organizando a trilha completa desde o protótipo até o deploy, com foco em reprodutibilidade e MLOps.",
+                    "Incluí estratégias de monitoramento e logging para rastreamento das inferências e criação de histórico para análise futura de performance dos modelos em produção.",
+                    "Projeto desenvolvido como entrega final do MBA em Machine Learning Engineering, consolidando habilidades em engenharia de dados, IA aplicada, arquitetura de soluções e documentação técnica orientada ao uso corporativo."
+                    ],
+                    technologies: ["Machine Learning", "MLOps", "Python", "FastAPI", "ETL", "JSON Parsing", "Data Engineering", "Feature Engineering", "API Development", "Batch Inference", "Data Pipeline", "GitHub", "Cloud Architecture", "Supervised Learning", "Model Deployment", "Model Monitoring"],
+                    link: "#"
+                },
                 {
                     title: "Modernização de Bases Especializadas: Migração de SAS para AWS",
                     description: "Projeto de modernização de processos de desenvolvimento de bases especializadas do ambiente legado SAS para a nuvem AWS, com foco em escalabilidade, governança e reuso no contexto do time de seguros.",
@@ -351,28 +353,38 @@
                     // imageAlt: "Diagrama da migração de processos SAS para o ambiente AWS.",
                     // diagramDescription: "Este diagrama conceitua o processo de modernização e migração de fluxos analíticos e bases de dados do ambiente SAS legado para a infraestrutura escalável da AWS, no contexto do setor de seguros. Ele visualiza a transição de plataformas e a reestruturação dos dados na nuvem.",
                     details: [
-                        "Atuei no desenvolvimento de bases especializadas críticas, anteriormente mantidas no SAS, para uma arquitetura moderna em AWS.",
-                        "Discovery e entendimento aprofundado das lógicas de negócios complexas dos processos que precisavam ser modernizados, garantindo a fidelidade dos dados.",
-                        "Contribuição para a otimização operacional e a capacidade analítica do time através da modernização da plataforma de dados."
+                        "Desenhei e implementei uma arquitetura modular e escalável para orquestrar múltiplos modelos de machine learning, contemplando pipelines de pré-processamento, inferência e disponibilização via APIs.",
+                        "Modelei soluções integradas de classificação (para predição de match entre candidatos e vagas), NLP (para análise semântica de entrevistas) e clusterização (para segmentação de perfis), todas com foco em aplicabilidade de negócio.",
+                        "Automatizei a ingestão e transformação de dados complexos em JSON, unificando múltiplas fontes (prospects, applicants e vagas) em uma estrutura flat robusta para consumo analítico e preditivo.",
+                        "Implementei endpoints REST com FastAPI e estrutura de versionamento via GitHub, organizando a trilha completa desde o protótipo até o deploy, com foco em reprodutibilidade e MLOps.",
+                        "Incluí estratégias de monitoramento e logging para rastreamento das inferências e criação de histórico para análise futura de performance dos modelos em produção.",
+                        "Projeto desenvolvido como entrega final do MBA em Machine Learning Engineering, consolidando habilidades em engenharia de dados, IA aplicada, arquitetura de soluções e documentação técnica orientada ao uso corporativo."
                     ],
                     technologies: ["SAS", "AWS Athena", "AWS S3", "AWS StepFunctions", "AWS EventBridge", "Data Modernization", "Bases Especializadas"],
                     link: "#"
                 },
-                // {
-                //     title: "Batalha de Dados (Hakathon Itau Unibanco)",
-                //     description: "",
-                //     // image: "",
-                //     // imageAlt: "Diagrama do fluxo de desenvolvimento do chatbot analítico, mostrando a integração com o Data Mesh e os componentes principais.",
-                //     // diagramDescription: "Este diagrama conceitua o fluxo de desenvolvimento do chatbot analítico, destacando a integração com o Data Mesh e os principais componentes envolvidos. Ele ilustra como os dados são processados e apresentados ao usuário final através da interface do chatbot.",
-                //     details: [
-                //         "",
-                //         "",
-                //         "",
-                //         ""
-                //     ],
-                //     technologies: ["Python", "AWS", "API Integration", "Arquitetura Modular", "IA Generativa", "Chatbot"],
-                //     link: "#"
-                // },
+                {
+                title: "SASI – Sistema Automático de Calendarização de Intervenções",
+                description: "Projeto campeão da Batalha de Dados, desafio corporativo focado na resolução de problemas reais com dados. O SASI é uma solução inteligente de calendarização automatizada, baseada em modelagem matemática e machine learning, com o objetivo de otimizar a alocação de recursos e reduzir atrasos operacionais.",
+                // image: "",
+                // imageAlt: "Diagrama da lógica de alocação automática usada no SASI.",
+                // diagramDescription: "Fluxo lógico de calendarização automatizada implementado no SASI, considerando critérios de urgência, capacidade de fornecedores e janelas de execução disponíveis.",
+                details: [
+                    "Atuei como principal idealizador e responsável técnico da solução SASI, desenvolvida durante a Batalha de Dados, na qual minha equipe foi campeã entre os participantes do desafio corporativo.",
+                    "Construímos um sistema de calendarização automática de intervenções operacionais recorrentes, utilizando uma abordagem matemática para alocação inteligente baseada em restrições de recursos e prioridades de execução.",
+                    "Implementamos um modelo de machine learning com Amazon SageMaker para priorização das intervenções, alimentado por uma Feature Store construída especificamente para a solução.",
+                    "Participei ativamente da engenharia de dados do projeto, desde a etapa de ingestão e transformação (ETL) com SQL até a construção dos dados de entrada para o modelo de ML.",
+                    "O SASI permite simular cenários operacionais diversos, garantindo cobertura de 100% das demandas e melhorando o planejamento estratégico, reduzindo atrasos e otimizando o uso de fornecedores e equipes técnicas.",
+                    "A solução também se destacou pelo alinhamento entre dados e negócio, com entrega clara, aplicável e impactante — unindo storytelling, robustez técnica e foco em escalabilidade."
+                ],
+                technologies: [
+                "AWS", "SageMaker", "SQL", "ETL", "Feature Store", 
+                "Python", "Simulation", "Optimization", 
+                "Machine Learning", "Data Storytelling"
+                ]
+                , 
+                link: "#"
+                },
                 {
                     title: "Agente Generativo para Documentação de Processos SAS e AWS",
                     description: "Desenvolvi um agente generativo para documentar processos legados em SAS e fluxos modernizados em AWS (PySpark, Glue, Athena), automatizando a geração de documentação técnica em Markdown e integrando essa entrega ao repositório e visualização via GitHub Pages.",
@@ -626,14 +638,36 @@
 
             // Data for the "Percepções sobre meu Trabalho" section
             const perceptionsData = [
-                // { title: "Pessoa super prestativa e resolutiva", text: "Renato é uma pessoa super prestativa e resolutiva, conseguindo avançar com vários aspectos de dados e monitorias super importantes para a área. Vem fazendo um bom trabalho e caminhando para se tornar destaque no time." },
-                // { title: "Ponto focal de dados e educador", text: "A forma como percebemos que os dados são fundamentais e indispensáveis, foi devido a ele. Junto a ele, podemos bater no pedido democratização dos dados, pois sem eles, nossa área é muito defasada. Ele é nosso ponto focal de dados e ensina muito bem todos que pedem ajuda." },
-                // { title: "Rápido aprendizado e busca por soluções", text: "Em pouco tempo de área conseguiu entender a atividade que foi proposta a ele e passou a executar muito bem. Busca aprender coisas novas para contornar as situações adversas que aparecem durante a execução das atividades. Continua assim que vai longe!" },
-                // { title: "Protagonismo e impacto na área", text: "Atuou com protagonismo na frente de dados na área durante o ano de 2023. Criou painéis gerais da área. Criou parceria com o time de MIS. Puxou a frente da conta consumer da área. Uma boa prática é dividir mais os conhecimentos que possui para equalizar o conhecimento que possui. Destacou-se em relação ao grupo." },
-                // { title: "Pró-atividade e responsabilidade", text: "O Renato é um analista extremamente pró ativo e trabalha de forma responsável com as demandas que são confiadas a ele. Sempre propondo melhorias e criticando de forma construtiva o que já está feito. Com base na sua atuação, considero que ele se destaca entre os demais Juniors." },
-                // { title: "Analista diferenciado e colaborativo", text: "Renato é um analista diferenciado. Sempre disposto a apoiar os companheiros e trazendo as melhores soluções sustentáveis para a área." },
-                // { title: "Curva de aprendizado acentuada e orientação a resultados", text: "Renato está a pouco tempo no time mas com uma curva de aprendizado bastante acentuada. Bastante questionador, com um perfil de quem busca a resolução, persegue o resultado. Suas contribuições foram valiosas para estruturar um hub onde todo o time que monitora as modalidades de cartão presente e não presente utilizam para acompanhar movimentações no portfólio diariamente. Os objetivos de nutrir o time de informações com agilidade e assertividade foram alcançados em 2022, se aprofundar no conhecimento de modalidades, otimizar visões de legado e ampliar o escopo de atuação vão acelerar o desenvolvimento." }
-            ];
+  {
+    "title": "Referência técnica e colaborativa em dados",
+    "text": "É referência em conhecimento em dados na gerência de experiência PF. Participou da frente de capacitação e até hoje é lembrado pela grande performance que teve, além de sempre estar disposto a ajudar pares e parceiros. Mostrou conhecimento técnico capaz de resolver problemas de alta complexidade. Tenho certeza que irá alcançar o PDI o mais rápido possível."
+  },
+  {
+    "title": "Alta intensidade no uso de dados e espírito de equipe",
+    "text": "O Jhon usa os dados intensamente para solucionar problemas e é o verdadeiro vai de turma!"
+  },
+  {
+    "title": "Capacidade técnica sólida e contribuição em comunidade",
+    "text": "Possui grande capacidade técnica para desempenhar suas funções. Além disso sempre agrega aos demais companheiros com seus conteúdos sobre dados."
+  },
+  {
+    "title": "Domínio técnico e comunicação inspiradora",
+    "text": "Jhonata é um profissional incrível e extremamente qualificado, destacando-se por sua inteligência e habilidade impressionante com dados. Ele possui um profundo conhecimento em AWS, Python e diversos outros processos, sempre demonstrando paciência e atenção ao explicar conceitos complexos. Sua capacidade de comunicação não apenas facilita o entendimento, mas também inspira confiança e motivação."
+  },
+  {
+    "title": "Potencial para liderar e expandir impacto",
+    "text": "Possui bastante conhecimento técnico e busca aprender cada vez mais. Tem ambição em diminuir trabalho manual e pode performar bem em estudos complexos se houver oportunidade. Acredito que a liderança possa aumentar o nível de exposição à comunidade a fim de desenvolver mais a interação com diferentes times e assim torná-lo um profissional cada vez mais completo."
+  },
+  {
+    "title": "Espírito colaborativo e impacto técnico positivo",
+    "text": "Jhonata tem se destacado por sua excelente capacidade técnica, trazendo um impacto extremamente positivo no apoio ao time. Ele está sempre pronto para oferecer ajuda quando solicitado, mostrando um espírito de equipe exemplar e uma disposição admirável para colaborar. Sua atitude proativa e colaborativa é verdadeiramente inspiradora para todos ao seu redor!"
+  },
+  {
+    "title": "Protagonismo em projetos e referência na equipe",
+    "text": "Jhonata se destacou muito este ano, desenvolvendo diversos projetos grandes e complexos como as capacitações, o estudo de personas entre outros, além disso, venceu a batalha de dados com uma participação importantíssima no desenvolvimento da solução. Tem tomado cada vez mais a frente em agendas importantes e sido ponto focal para as tomadas de decisão da equipe quanto à novas tecnologias."
+  }
+]
+;
 
             const perceptionsGrid = document.querySelector('#perceptions .perceptions-grid'); 
             perceptionsData.forEach(p => {

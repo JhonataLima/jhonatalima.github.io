@@ -1,685 +1,157 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo | Jhonata de Oliveira Alves Lima</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f5f4;
-            scroll-behavior: smooth;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #3b82f6;
-            border: 3px solid #bfdbfe;
-            z-index: 10;
-        }
-        .timeline-line {
-            position: absolute;
-            left: -21px;
-            top: 5px;
-            bottom: -8px;
-            width: 2px;
-            background-color: #dbeafe;
-        }
-        .timeline-item:last-child .timeline-line {
-            display: none;
-        }
-        .details-content {
-            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, margin-top 0.5s ease-in-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        .details-content.open {
-            max-height: 2000px; 
-            opacity: 1;
-            margin-top: 1rem;
-        }
-        .tech-logo-card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            padding: 0.5rem; 
-        }
-        .tech-logo-card img {
-            max-width: 100%;
-            height: auto;
-            display: block; 
-        }
-        .perceptions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
-            gap: 1rem;
-        }
-        .perception-card {
-            background-color: #ffffff;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            text-align: left;
-        }
-        .perception-card h3 {
-            font-weight: 600;
-            color: #2563eb;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-        .perception-card p {
-            font-size: 0.875rem;
-            color: #44403c;
-            font-style: italic;
-        }
-        .highlights-carousel-container {
-            position: relative;
-            overflow: hidden;
-            padding: 1rem 0;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            border-radius: 0.5rem;
-            background-color: #ffffff;
-        }
-        .carousel-track {
-            display: flex;
-            align-items: center;
-        }
-        .highlight-card {
-            flex-shrink: 0;
-            width: 280px;
-            margin: 0 10px;
-            padding: 1rem;
-            box-sizing: border-box;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, filter 0.5s ease-in-out, background-color 0.3s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            text-align: left;
-            min-height: 180px;
-            background-color: #f0f0f0;
-            opacity: 0.5;
-            transform: scale(0.9);
-            filter: blur(3px);
-        }
-        .highlight-card.active {
-            opacity: 1;
-            transform: scale(1);
-            filter: blur(0);
-            background-color: #ffffff;
-        }
-        .highlight-card h3 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-        .highlight-card p {
-            font-size: 0.875rem;
-            color: #44403c;
-        }
-        .transparent-box {
-            background: transparent !important;
-            box-shadow: none !important;
-            border: none !important;
-}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Jhonata Lima</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .details-content { display: none; }
+    .details-content.open { display: block; }
+    .timeline-line { position: absolute; left: 0.75rem; top: 0; bottom: 0; width: 2px; background-color: #0F172A; }
+    .highlight-card.active { border: 2px solid #0F172A; }
+  </style>
 </head>
-<body class="text-stone-800">
-    <div class="container mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
-        <header class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-800">Jhonata de Oliveira Alves Lima</h1>
-            <p class="mt-2 text-xl md:text-2xl text-blue-600 font-medium">Data & Analytics Engineering</p>
-            <div class="mt-6 flex justify-center items-center flex-wrap gap-x-4 gap-y-2 text-stone-600">
-                <a href="tel:+5511957723352" class="hover:text-blue-600 flex items-center transition-colors rounded-full px-3 py-1 bg-white shadow-sm">
-                    <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    (11) 95772-3352
-                </a>
-                <a href="mailto:jhonataoliveira0200@gmail.com" class="hover:text-blue-600 flex items-center transition-colors rounded-full px-3 py-1 bg-white shadow-sm">
-                    <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    jhonataoliveira0200@gmail.com
-                </a>
-                <a href="https://www.linkedin.com/in/jhonata-lima-b032221bb/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 flex items-center transition-colors rounded-full px-3 py-1 bg-white shadow-sm">
-                    <svg class="w-5 h-5 mr-1.5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    LinkedIn
-                </a>
+<body class="bg-white text-zinc-900">
+  <div class="container mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-cyan-900">Jhonata de Oliveira Alves Lima</h1>
+      <p class="text-2xl font-semibold text-cyan-800 mb-4">Data & Analytics Engineering</p>
+      <div class="mt-6 flex justify-center items-center flex-wrap gap-x-4 gap-y-2 text-stone-600">
+        <a href="tel:+5511957723352" class="hover:text-blue-600 flex items-center transition-colors rounded-full px-3 py-1 bg-white shadow-sm">
+          <!-- ícone telefone -->
+          (11) 95772-3352
+        </a>
+        <a href="mailto:jhonataoliveira0200@gmail.com" class="hover:text-blue-600 flex items-center transition-colors rounded-full px-3 py-1 bg-white shadow-sm">
+          <!-- ícone email -->
+          jhonataoliveira0200@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/jhonata-lima-b032221bb/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 flex items-center transition-colors rounded-full px-3 py-1 bg-white shadow-sm">
+          <!-- ícone LinkedIn -->
+          LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-12">
+        <main>
+          <section id="summary">
+            <h2 class="text-2xl font-bold text-cyan-900 mb-6">Resumo Profissional</h2>
+            <div class="relative pl-6 border-l-4 border-cyan-700">
+                <p>
+                    Profissional de Dados com 4 anos de experiência, atuando como Engenheiro de Dados e Analytics no Itaú Unibanco, com sólida experiência prática na construção de pipelines robustos e escaláveis, modernização de ambientes legados para cloud AWS e aplicação de boas práticas de engenharia de software para garantir qualidade, governança e eficiência no fluxo de dados.
+                </p>
+                <p>
+                    Tenho domínio consolidado em Python, SQL, AWS Glue, Athena, S3 e conceitos de MLOps, com participação em projetos reais que envolvem migração de bases SAS para arquitetura cloud, automação de pipelines e integração de Machine Learning em processos de negócio, incluindo desenvolvimento de chatbots analíticos com indicadores.
+                </p>
+                <p>
+                    Minha atuação une conhecimento técnico e visão estratégica, promovendo a integração entre equipes de dados, tecnologia e negócio para entregar soluções inovadoras e gerar impacto contínuo. Estou em constante evolução para ampliar minha atuação na área, com foco em Engenharia de Dados e MLOps.
+                </p>
             </div>
-        </header>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
-            <main class="lg:col-span-2 space-y-16">
+          </section>
 
-                <!-- Summary -->
-                <section id="summary">
-                    <h2 class="text-3xl font-bold border-b-2 border-blue-200 pb-2 mb-4">Resumo Profissional</h2>
-                    <div class="space-y-4 text-stone-700 leading-relaxed">
-                        <p>
-                            Profissional de Dados com 4 anos de experiência, atuando como Engenheiro de Dados e Analytics no Itaú Unibanco, com sólida experiência prática na construção de pipelines robustos e escaláveis, modernização de ambientes legados para cloud AWS e aplicação de boas práticas de engenharia de software para garantir qualidade, governança e eficiência no fluxo de dados.
-                        </p>
-                        <p>
-                            Tenho domínio consolidado em Python, SQL, AWS Glue, Athena, S3 e conceitos de MLOps, com participação em projetos reais que envolvem migração de bases SAS para arquitetura cloud, automação de pipelines e integração de Machine Learning em processos de negócio, incluindo desenvolvimento de chatbots analíticos com indicadores.
-                        </p>
-                        <p>
-                            Minha atuação une conhecimento técnico e visão estratégica, promovendo a integração entre equipes de dados, tecnologia e negócio para entregar soluções inovadoras e gerar impacto contínuo. Estou em constante evolução para ampliar minha atuação na área, com foco em Engenharia de Dados e MLOps.
-                        </p>
-                    </div>
-                </section>
+          <section id="experience" class="mt-12">
+            <h2 class="text-2xl font-semibold text-cyan-800 mb-4">Experiência Profissional</h2>
+            <div id="experience-container" class="relative pl-6 border-cyan-700"></div>
+          </section>
 
-                <!-- Experience -->
-                <section id="experience">
-                    <h2 class="text-3xl font-bold border-b-2 border-blue-200 pb-2 mb-6">Experiência Profissional</h2>
-                    <p class="text-stone-600 mb-10 -mt-2">Clique para ver os detalhes.</p>
-                    <div id="experience-container" class="relative pl-8">
-                        
-                    </div>
-                </section>
-                
-                <!-- Projects -->
-                <section id="projects">
-                    <h2 class="text-3xl font-bold border-b-2 border-blue-200 pb-2 mb-6">Projetos de Dados e Inovação</h2>
-                    <p class="text-stone-600 mb-10 -mt-2">Projetos destaque que utilizei habilidades de Engenharia de Dados|Analytics|MLOps.</p>
-                    <div id="projects-container" class="space-y-8">       
-                    </div>
-                </section>
-            </main>
+          <section id="projects" class="mt-12">
+            <h2 class="text-2xl font-semibold text-cyan-800 mb-4">Projetos de Dados e Inovação</h2>
+            <div id="projects-container" class="grid md:grid-cols-2 gap-6"></div>
+          </section>
 
-            <aside class="space-y-12 lg:mt-16">
+            <section id="education-certifications" class="mt-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
-                    <div class="mt-8">
-                        <h3 class="font-semibold mb-3 text-lg border-b border-stone-200 pb-2">Stacks de Tecnologia</h3>
-                        <p class="text-stone-600 mb-4 text-sm">Visualização das tecnologias com as quais trabalho.</p>
-                        <div id="tech-stack-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                            <!-- Tech stack logos will be injected by JS -->
+                    <!-- Formação Acadêmica -->
+                    <div id="education">
+                        <h2 class="text-2xl font-semibold text-cyan-800 mb-4">Formação Acadêmica</h2>
+                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4 mb-4">
+                            <img src="https://ativagruposbf.com.br/explorer/uploads/upload_1662582933.jpg" loading="lazy" alt="FIAP Logo" class="w-20 h-20 object-contain">
+                            <div>
+                                <h3 class="font-semibold text-lg text-cyan-900">MBA | Machine Learning Engineering</h3>
+                                <p class="text-cyan-800">FIAP</p>
+                                <p class="text-sm text-stone-500 mt-1">2024 - 2025</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4 mb-4">
+                            <img src="https://ativagruposbf.com.br/explorer/uploads/upload_1662582933.jpg" loading="lazy" alt="FIAP Logo" class="w-20 h-20 object-contain">
+                            <div>
+                                <h3 class="font-semibold text-lg text-cyan-900">MBA | Data Analytics</h3>
+                                <p class="text-cyan-800">FIAP</p>
+                                <p class="text-sm text-stone-500 mt-1">2023 - 2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4 mb-4">
+                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_l-rWX0CV26XkG5tgBk-U4ov-_JzozN3olMqmDwq9M_mFw=s900-c-k-c0x00ffffff-no-rj" loading="lazy" alt="Cruzeiro do Sul Logo" class="w-20 h-20 object-contain">
+                            <div>
+                                <h3 class="font-semibold text-lg text-cyan-900">Tecnólogo em Ciência de Dados</h3>
+                                <p class="text-cyan-800">Cruzeiro do Sul Virtual</p>
+                                <p class="text-sm text-stone-500 mt-1">2021 - 2022</p>
+                            </div>
                         </div>
                     </div>
-                </section>
 
-                <!-- Percepções sobre meu Trabalho (Individual Cards) -->
-                <section id="perceptions">
-                    <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">Feedbacks</h2>
-                    <div class="perceptions-grid">
-                        <!-- Perception cards will be injected by JS -->
-                    </div>
-                </section>
- 
-                <section id="education">
-                    <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">Formação Acadêmica</h2>
-                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-                        <img src="https://ativagruposbf.com.br/explorer/uploads/upload_1662582933.jpg" alt="FIAP Logo" class="w-20 h-20 object-contain">
-                        <div>
-                            <h3 class="font-semibold text-lg text-slate-800">MBA | Machine Learning Engineering</h3>
-                            <p class="text-stone-600">Faculdade de Informática e Administração Paulista (FIAP)</p>
-                            <p class="text-sm text-stone-500 mt-1">2024 - 2025</p>
+                    <!-- Certificações -->
+                    <div id="certifications">
+                        <h2 class="text-2xl font-semibold text-cyan-800 mb-4">Certificações</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
+                                <img src="https://images.credly.com/images/a7e0490e-d2c5-4b8e-abd4-25d950066bda/image.png" loading="lazy" alt="Batalha de Dados" class="rounded-md w-16 h-16">
+                                <p class="text-cyan-800 font-medium text-xs">Batalha de Dados</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
+                                <img src="https://www.brasilopenbadge.com.br/badge/3709.png?nocache=353452700" loading="lazy" alt="Data Modelling" class="rounded-md w-16 h-16">
+                                <p class="text-cyan-800 font-medium text-xs">MLOps</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
+                                <img src="https://www.brasilopenbadge.com.br/badge/3694.png?nocache=363484178" loading="lazy" alt="D&A Fundation" class="rounded-md w-16 h-16">
+                                <p class="text-cyan-800 font-medium text-xs">D&A Fundation</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
+                                <img src="https://www.brasilopenbadge.com.br/badge/3018.png?nocache=354645338" loading="lazy" alt="Programação com Python" class="rounded-md w-16 h-16">
+                                <p class="text-cyan-800 font-medium text-xs">Programação com Python</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
+                                <img src="https://www.brasilopenbadge.com.br/badge/2724.png?nocache=364125902" loading="lazy" alt="Banco de Dados" class="rounded-md w-16 h-16">
+                                <p class="text-cyan-800 font-medium text-xs">Banco de Dados</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
+                                <img src="https://www.brasilopenbadge.com.br/badge/2727.png?nocache=364487124" loading="lazy" alt="Estatística" class="rounded-md w-16 h-16">
+                                <p class="text-cyan-800 font-medium text-xs">Estatística</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
+                                <img src="https://www.brasilopenbadge.com.br/badge/2290.png?nocache=364493178" loading="lazy" alt="Visualização de Dados" class="rounded-md w-16 h-16">
+                                <p class="text-cyan-800 font-medium text-xs">Visualização de Dados</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-                        <img src="https://ativagruposbf.com.br/explorer/uploads/upload_1662582933.jpg" alt="FIAP Logo" class="w-20 h-20 object-contain">
-                        <div>
-                            <h3 class="font-semibold text-lg text-slate-800">MBA | Data Analytics</h3>
-                            <p class="text-stone-600">Faculdade de Informática e Administração Paulista (FIAP)</p>
-                            <p class="text-sm text-stone-500 mt-1">2023 - 2024</p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_l-rWX0CV26XkG5tgBk-U4ov-_JzozN3olMqmDwq9M_mFw=s900-c-k-c0x00ffffff-no-rj" alt="Cruzeiro do Sul Logo" class="w-20 h-20 object-contain">
-                        <div>
-                            <h3 class="font-semibold text-lg text-slate-800">Tecnologo em Ciência de Dados</h3>
-                            <p class="text-stone-600">Cruzeiro do Sul Virtual</p>
-                            <p class="text-sm text-stone-500 mt-1">2021 - 2022</p>
-                        </div>
-                    </div>
-                </section>
- 
-                <section id="certifications">
-                    <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">Certificações</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
-                            <img src="https://images.credly.com/images/a7e0490e-d2c5-4b8e-abd4-25d950066bda/image.png" alt="Batalha de Dados" class="rounded-md w-16 h-16">
-                            <p class="text-stone-700 font-medium text-xs">Batalha de Dados</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
-                            <img src="https://www.brasilopenbadge.com.br/badge/3709.png?nocache=353452700" alt="Data Modelling" class="rounded-md w-16 h-16">
-                            <p class="text-stone-700 font-medium text-xs">MLOps</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
-                            <img src="https://www.brasilopenbadge.com.br/badge/3694.png?nocache=363484178" alt="D&A Fundation" class="rounded-md w-16 h-16">
-                            <p class="text-stone-700 font-medium text-xs">D&A Fundation</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
-                            <img src="https://www.brasilopenbadge.com.br/badge/3018.png?nocache=354645338" alt="Programação com Python" class="rounded-md w-16 h-16">
-                            <p class="text-stone-700 font-medium text-xs">Programação com Python</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
-                            <img src="https://www.brasilopenbadge.com.br/badge/2724.png?nocache=364125902" alt="Banco de Dados" class="rounded-md w-16 h-16">
-                            <p class="text-stone-700 font-medium text-xs">Banco de Dados</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
-                            <img src="https://www.brasilopenbadge.com.br/badge/2727.png?nocache=364487124" alt="Estatística" class="rounded-md w-16 h-16">
-                            <p class="text-stone-700 font-medium text-xs">Estatística</p>
-                        </div>
-                        <div class="bg-white p-3 rounded-lg shadow-md flex items-center space-x-3">
-                            <img src="https://www.brasilopenbadge.com.br/badge/2290.png?nocache=364493178" alt="Visualização de Dados" class="rounded-md w-16 h-16">
-                            <p class="text-stone-700 font-medium text-xs">Visualização de Dados</p>
-                        </div>
-                        </div>
-                    </div>
-                </section>
-            </aside>
-        </div>
+                </div>
+            </section>
+        </main>
+      </div>
+
+      <aside class="space-y-12 lg:mt-16">
+        <section id="tech-stack">
+          <h3 class="text-2xl font-semibold text-cyan-800 mb-4">Tech Stack</h3>
+          <div class="transition-transform transform hover:scale-105 hover:bg-stone-100 cursor-pointer p-2">
+            <div id="tech-stack-container" class="flex flex-wrap gap-3"></div>
+          </div>
+        </section>
+
+        <section id="perceptions" class="mt-12">
+          <div class="transition-transform transform hover:scale-105 hover:bg-stone-100 cursor-pointer p-2">
+            <h2 class="text-2xl font-semibold text-cyan-800 mb-4">Feedbacks</h2>
+            <div class="perceptions-grid grid md:grid-cols-1 gap-6"></div>
+          </div>
+        </section>
+      </aside>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const experienceData = [
-                {
-                    role: "Analista de Dados Jr",
-                    company: "Itaú Unibanco",
-                    period: "Junho de 2022 - Presente",
-                    details: [
-                        "Participação ativa na estruturação de soluções de MLOps, incluindo ideação de um chatbot analítico com indicadores de seguros, integrando arquitetura de dados com aplicações de IA.",
-                        "Atuação estratégica na modernização de pipelines legados (SAS) para ambiente cloud (AWS), utilizando Glue Data Move, AWS Glue Catalog, Athena e S3 como data lake central.",
-                        "Condução de análises para definição de perfis de clientes e apoio à personalização de jornadas, conectando dados de diversas fontes e promovendo reuso de componentes via catálogos.",
-                        "Fomento à cultura data-driven, com capacitação de times de negócio (BU PF e PJ), aproximando áreas técnicas e estratégicas para entrega de valor contínuo.",
-                        "Desenvolvimento e automação de pipelines de dados para cenários batch, com foco em integração com sistemas de negócio (ex: CRM) e gatilhos para inadimplência.",
-                        "Suporte a squads na construção de pipelines e fluxos orientados a OKRs, garantindo escalabilidade, performance e governança dos dados."
-                    ],
-                    tags: ["DataEngineering", "MLOps", "AWSGlue", "AmazonAthena", "AmazonS3", "ETL", "DataPipelines", "Python", "SQL", "Inovação", "DataDriven"]
-                },
-                {
-                    role: "Estagiário",
-                    company: "Itaú Unibanco",
-                    period: "Setembro de 2021 - Maio de 2022",
-                    details: ["Atuação no apoio às atividades da área de Dados e Analytics, com foco no desenvolvimento de habilidades em análise de dados, compreensão de processos de negócio e uso de ferramentas corporativas.",
-                            "Participação em todo o ciclo analítico — desde a preparação e tratamento de dados até a entrega de análises com storytelling e visualizações claras. Execução de rotinas operacionais, identificação de oportunidades de melhoria e aprendizado contínuo em ambientes colaborativos e orientados a dados."],
-                    tags: ["Data Analytics", "Data Preparation", "Storytelling", "AprendizadoContínuo"]
-                }
-            ];
-
-            const projectsData = [
-                {
-                    title: "Chat Analítico com Indicadores de Performance",
-                    description: "(Projeto em desenvolvimento) Chatbot analítico para a comunidade de seguros, com o objetivo de viabilizar consultas a indicadores de performance por meio de integração em tempo real com o ecossistema de dados.",
-                    // image: "",
-                    // imageAlt: "Diagrama do fluxo de desenvolvimento do chatbot analítico, mostrando a integração com o Data Mesh e os componentes principais.",
-                    // diagramDescription: "Este diagrama conceitua o fluxo de desenvolvimento do chatbot analítico, destacando a integração com o Data Mesh e os principais componentes envolvidos. Ele ilustra como os dados são processados e apresentados ao usuário final através da interface do chatbot.",
-                    details: [
-                        "O chatbot está sendo estruturado com arquitetura modular, facilitando a manutenção e evolução da solução e já foi integrada a consulta em tempo real ao Data Mesh, garantindo acesso dinâmico a dados críticos para o negócio.",
-                        "Foi implementada a requisição de uma API de um Agent Generativo StackSpot, permitindo futuramente gerar respostas em linguagem natural a partir dos dados consultados.",
-                        "Validação e Monitoramento com analise de interação do usuário, visando aprimorar continuamente a experiência e a precisão das respostas.",
-                        "Atualmente o projeto esta em preparação para testes e validações finais antes de entrar em produção"
-                    ],
-                    technologies: ["Python", "AWS", "API Integration", "Arquitetura Modular", "IA Generativa", "Chatbot"],
-                    link: "#"
-                },    
-                {
-                title: "Plataforma de Matching de Candidatos - Projeto MBA",
-                description: "Solução completa de Machine Learning Engineering desenvolvida para o case da empresa Decision, unificando múltiplos modelos para previsão de match, com foco em arquitetura escalável e integração de ponta a ponta.",
-                // image: "",
-                // imageAlt: "Diagrama do pipeline de engenharia e modelos do projeto Decision.",
-                // diagramDescription: "Este diagrama representa a arquitetura modular e escalável do projeto Decision, destacando os fluxos de ingestão, preparação de dados, inferência dos modelos e disponibilização via API com monitoramento.",
-                details:  [
-                    "Desenhei e implementei uma arquitetura modular e escalável para orquestrar múltiplos componentes de machine learning, contemplando pipelines de pré-processamento, inferência e disponibilização via APIs.",
-                    "Desenvolvi um modelo supervisionado de classificação focado em previsão de match entre candidatos e vagas, aplicando técnicas de engenharia de atributos e validação cruzada com métricas orientadas ao negócio.",
-                    "Automatizei a ingestão e transformação de dados complexos em JSON, unificando múltiplas fontes (prospects, applicants e vagas) em uma estrutura flat robusta para consumo analítico e preditivo.",
-                    "Implementei endpoints REST com FastAPI e estrutura de versionamento via GitHub, organizando a trilha completa desde o protótipo até o deploy, com foco em reprodutibilidade e MLOps.",
-                    "Incluí estratégias de monitoramento e logging para rastreamento das inferências e criação de histórico para análise futura de performance dos modelos em produção.",
-                    "Projeto desenvolvido como entrega final do MBA em Machine Learning Engineering, consolidando habilidades em engenharia de dados, IA aplicada, arquitetura de soluções e documentação técnica orientada ao uso corporativo."
-                    ],
-                    technologies: ["Machine Learning", "MLOps", "Python", "FastAPI", "ETL", "JSON Parsing", "Data Engineering", "Feature Engineering", "API Development", "Batch Inference", "Data Pipeline", "GitHub", "Cloud Architecture", "Supervised Learning", "Model Deployment", "Model Monitoring"],
-                    link: "#"
-                },
-                {
-                    title: "Modernização de Bases Especializadas: Migração de SAS para AWS",
-                    description: "Projeto de modernização de processos de desenvolvimento de bases especializadas do ambiente legado SAS para a nuvem AWS, com foco em escalabilidade, governança e reuso no contexto do time de seguros.",
-                    // image: "",
-                    // imageAlt: "Diagrama da migração de processos SAS para o ambiente AWS.",
-                    // diagramDescription: "Este diagrama conceitua o processo de modernização e migração de fluxos analíticos e bases de dados do ambiente SAS legado para a infraestrutura escalável da AWS, no contexto do setor de seguros. Ele visualiza a transição de plataformas e a reestruturação dos dados na nuvem.",
-                    details: [
-                        "Desenhei e implementei uma arquitetura modular e escalável para orquestrar múltiplos modelos de machine learning, contemplando pipelines de pré-processamento, inferência e disponibilização via APIs.",
-                        "Modelei soluções integradas de classificação (para predição de match entre candidatos e vagas), NLP (para análise semântica de entrevistas) e clusterização (para segmentação de perfis), todas com foco em aplicabilidade de negócio.",
-                        "Automatizei a ingestão e transformação de dados complexos em JSON, unificando múltiplas fontes (prospects, applicants e vagas) em uma estrutura flat robusta para consumo analítico e preditivo.",
-                        "Implementei endpoints REST com FastAPI e estrutura de versionamento via GitHub, organizando a trilha completa desde o protótipo até o deploy, com foco em reprodutibilidade e MLOps.",
-                        "Incluí estratégias de monitoramento e logging para rastreamento das inferências e criação de histórico para análise futura de performance dos modelos em produção.",
-                        "Projeto desenvolvido como entrega final do MBA em Machine Learning Engineering, consolidando habilidades em engenharia de dados, IA aplicada, arquitetura de soluções e documentação técnica orientada ao uso corporativo."
-                    ],
-                    technologies: ["SAS", "AWS Athena", "AWS S3", "AWS StepFunctions", "AWS EventBridge", "Data Modernization", "Bases Especializadas"],
-                    link: "#"
-                },
-                {
-                title: "SASI – Sistema Automático de Calendarização de Intervenções",
-                description: "Projeto campeão da Batalha de Dados, desafio corporativo focado na resolução de problemas reais com dados. O SASI é uma solução inteligente de calendarização automatizada, baseada em modelagem matemática e machine learning, com o objetivo de otimizar a alocação de recursos e reduzir atrasos operacionais.",
-                // image: "",
-                // imageAlt: "Diagrama da lógica de alocação automática usada no SASI.",
-                // diagramDescription: "Fluxo lógico de calendarização automatizada implementado no SASI, considerando critérios de urgência, capacidade de fornecedores e janelas de execução disponíveis.",
-                details: [
-                    "Atuei como principal idealizador e responsável técnico da solução SASI, desenvolvida durante a Batalha de Dados, na qual minha equipe foi campeã entre os participantes do desafio corporativo.",
-                    "Construímos um sistema de calendarização automática de intervenções operacionais recorrentes, utilizando uma abordagem matemática para alocação inteligente baseada em restrições de recursos e prioridades de execução.",
-                    "Implementamos um modelo de machine learning com Amazon SageMaker para priorização das intervenções, alimentado por uma Feature Store construída especificamente para a solução.",
-                    "Participei ativamente da engenharia de dados do projeto, desde a etapa de ingestão e transformação (ETL) com SQL até a construção dos dados de entrada para o modelo de ML.",
-                    "O SASI permite simular cenários operacionais diversos, garantindo cobertura de 100% das demandas e melhorando o planejamento estratégico, reduzindo atrasos e otimizando o uso de fornecedores e equipes técnicas.",
-                    "A solução também se destacou pelo alinhamento entre dados e negócio, com entrega clara, aplicável e impactante — unindo storytelling, robustez técnica e foco em escalabilidade."
-                ],
-                technologies: [
-                "AWS", "SageMaker", "SQL", "ETL", "Feature Store", 
-                "Python", "Simulation", "Optimization", 
-                "Machine Learning", "Data Storytelling"
-                ]
-                , 
-                link: "#"
-                },
-                {
-                    title: "Agente Generativo para Documentação de Processos SAS e AWS",
-                    description: "Desenvolvi um agente generativo para documentar processos legados em SAS e fluxos modernizados em AWS (PySpark, Glue, Athena), automatizando a geração de documentação técnica em Markdown e integrando essa entrega ao repositório e visualização via GitHub Pages.",
-                    // image: "",
-                    // imageAlt: "Diagrama do fluxo de desenvolvimento do chatbot analítico, mostrando a integração com o Data Mesh e os componentes principais.",
-                    // diagramDescription: "Este diagrama conceitua o fluxo de desenvolvimento do chatbot analítico, destacando a integração com o Data Mesh e os principais componentes envolvidos. Ele ilustra como os dados são processados e apresentados ao usuário final através da interface do chatbot.",
-                    details: [
-                        "O agente foi criado sobre a plataforma Stackspot, utilizando comandos rápidos (quick commands) para gerar documentação estruturada a partir do código dos pipelines.",
-                        "O material gerado foi versionado no GitHub e disponibilizado em um ambiente público via GitHub Pages, facilitando o acesso técnico e promovendo governança e reuso.",
-                        "capacitei o time para utilizá-lo de forma autônoma, padronizando a documentação de processos e promovendo a adoção da IA como ferramenta de apoio técnico.",
-                        "Apoio direto no desenvolvimento do GitHub Pages e organização dos repositórios para facilitar o acesso e a navegação pela documentação gerada."
-                    ],
-                    technologies: ["StackSpot", "IA Generativa", "Markdown", "Github Pages", "IA Generativa"],
-                    link: "#"
-                },
-                {
-                    title: "Migração de Bases Legados(SAS) de Seguros para AWS",
-                    description: "Migração de bases de dados legadas do ambiente SAS para a arquitetura modernizada em nuvem AWS, no contexto da comunidade de seguros",
-                    // image: "",
-                    // imageAlt: "Diagrama conceitual do fluxo de migração de processos legados para AWS/Data Mesh, mostrando os componentes chave e o fluxo de dados.",
-                    // diagramDescription: "Este diagrama ilustra a arquitetura de alto nível do processo de migração, desde a origem dos dados no ambiente legado (SAS) até a sua transformação e alocação no Data Mesh da AWS. Ele destaca os serviços AWS utilizados para cada etapa, garantindo a visualização da transição e a modernização.",
-                    details: [
-                        "Utilizei AWS Glue Data Move para realizar a transferência eficiente das bases e implementei a catalogação de dados com o AWS Glue Data Catalog, permitindo o consumo estruturado e governado pela comunidade de usuários.",
-                        "Participei ativamente da discussão e seleção das melhores soluções AWS para cada etapa do pipeline, visando eficiência e custo-benefício.",
-                        "Otimizei a ferramenta ja existente de migração de bases SAS para AWS, garantindo a integridade e a qualidade e eficiencia dos dados durante o processo de migração",
-                        "Essa entrega marcou o início das discussões e da implementação da modernização de processos de dados na AWS, promovendo maior escalabilidade, reusabilidade e integração com o ecossistema cloud e princípios de Data Mesh."
-                    ],
-                    highlights: [
-                        "+30 Tabelas Criadas",
-                        "11 TB de Armazenamento",
-                        "+100 Glue Jobs",
-                        "60 Orquestradores de Processos",
-                        "Reuso de +20 Jobs de Reprocessamento",
-                    ],
-                    technologies: ["DataEngineering", "PySpark", "SQL", "AWS Glue", "AWS Athena", "Data Catalog", "DataPipelines", "Data Mesh", "SAS Migration"],
-                    link: "#"
-                },
-                {
-                    title: "Capacitação e Treinamento em Dados de Analytics",
-                    description: "Desenvolvi e conduzi treinamentos técnicos voltados à formação e nivelamento de profissionais em conceitos fundamentais e aplicados de Dados e Analytics, com foco em ambientes cloud (AWS) e ferramentas de análise.",
-                    // image: "",
-                    // imageAlt: "Diagrama de um programa de ensino e treinamento em Dados de Analytics.",
-                    // diagramDescription: "Este diagrama representa a estrutura de um programa de ensino e treinamento em Dados de Analytics, detalhando os módulos teóricos (ambientes, processamento, arquiteturas de dados) e as aplicações práticas com ferramentas como PySpark, SQL e AWS, visando a capacitação e equalização do conhecimento da equipe.",
-                    details: [
-                        "Estruturei aulas teóricas e práticas abordando arquitetura de dados, processamento em nuvem, fundamentos de pipelines e uso de ferramentas como Pandas, SQL, AWS e PySpark.",
-                        "Atuei como mentor técnico, conduzindo sessões ao vivo, resolvendo desafios com os participantes e promovendo o uso estratégico de dados em contextos reais do negócio.",
-                        "Atuei como mentor e facilitador, acelerando o desenvolvimento profissional em Dados de Analytics através de exemplos práticos e resolução de desafios.",
-                        "Mentoria técnica contínua para estagiários, com foco no desenvolvimento técnico, autonomia e entregas de impacto",
-                        "Foco em cases reais e aplicação prática de conceitos, com o objetivo de capacitar a equipe para enfrentar desafios do dia a dia."
-                    ],
-                    technologies: ["AWS", "Pandas", "SQL", "Data Processing", "Analytics Training", "Mentorship", "Mentoria"],
-                    link: "#"
-                }
-            ];
-
-            const experienceContainer = document.getElementById('experience-container');
-            experienceData.forEach(job => {
-                const jobElement = document.createElement('div');
-                jobElement.className = 'timeline-item relative mb-8';
-                
-                const tagsHtml = job.tags.map(tag => `<span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold mr-2 mb-2 px-2.5 py-1 rounded-full rounded-md">${tag}</span>`).join('');
-
-                jobElement.innerHTML = `
-                    <div class="timeline-line"></div>
-                    <div class="cursor-pointer job-title transition-colors hover:bg-stone-200 p-2 rounded-md">
-                        <h3 class="text-lg font-semibold text-slate-800">${job.role}</h3>
-                        <p class="text-md text-stone-600 font-medium">${job.company}</p>
-                        <p class="text-sm text-stone-500">${job.period}</p>
-                    </div>
-                    <div class="details-content pl-2">
-                        <ul class="list-disc list-inside mt-2 text-stone-700 space-y-2">
-                            ${job.details.map(d => `<li>${d}</li>`).join('')}
-                        </ul>
-                        <div class="mt-4 flex flex-wrap">
-                            ${tagsHtml}
-                        </div>
-                    </div>
-                `;
-                experienceContainer.appendChild(jobElement);
-            });
-
-            document.querySelectorAll('.job-title').forEach(title => {
-                title.addEventListener('click', () => {
-                    const content = title.nextElementSibling;
-                    content.classList.toggle('open');
-                });
-            });
-
-            const projectsContainer = document.getElementById('projects-container');
-            projectsData.forEach(project => {
-                const projectElement = document.createElement('div');
-                projectElement.className = 'bg-white p-6 rounded-lg shadow-md';
-
-                const projectTagsHtml = project.technologies.map(tag => `<span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold mr-2 mb-2 px-2.5 py-1 rounded-full rounded-md">${tag}</span>`).join('');
-
-                const highlightsHtml = project.highlights ? `
-                    <div class="mt-4 p-4 bg-blue-50 rounded-md">
-                        <h4 class="font-semibold text-blue-800 mb-2">Resultados e Métricas Principais:</h4>
-                        <ul class="list-disc list-inside text-blue-700 text-sm space-y-1">
-                            ${project.highlights.map(h => `<li>${h}</li>`).join('')}
-                        </ul>
-                    </div>
-                ` : '';
-
-                projectElement.innerHTML = `
-                    <div class="cursor-pointer project-title transition-colors hover:bg-stone-100 p-2 -m-2 rounded-md">
-                        <h3 class="text-xl font-semibold text-blue-700">${project.title}</h3>
-                        <p class="text-sm text-stone-600 mt-1">${project.description}</p>
-                    </div>
-                    <div class="details-content mt-4 pl-2">
-                        ${project.diagramDescription ? `<p class="mb-4 text-stone-600">${project.diagramDescription}</p>` : ''}
-                        ${project.image ? `<div class="w-full flex justify-center mb-6">
-                                <img src="${project.image}" alt="${project.imageAlt}" class="rounded-lg shadow-md max-w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x300/cccccc/000000?text=Imagem+Nao+Disponivel';">
-                            </div>` : ''}
-                        <ul class="list-disc list-inside text-stone-700 space-y-2">
-                            ${project.details.map(d => `<li class="mb-2">${d}</li>`).join('')}
-                        </ul>
-                        ${highlightsHtml}
-                        <div class="mt-4 flex flex-wrap">
-                            ${projectTagsHtml}
-                        </div>
-                        ${project.link && project.link !== '#' ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">Ver Projeto <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>` : ''}
-                    </div>
-                `;
-                projectsContainer.appendChild(projectElement);
-            });
-
-            document.querySelectorAll('.project-title').forEach(title => {
-                title.addEventListener('click', () => {
-                    const content = title.nextElementSibling;
-                    content.classList.toggle('open');
-                });
-            });
-            // Data for the visual Tech Stack section (logos and colored text)
-            const technologyStackData = [
-                    { label: 'AWS', color: '232F3E', logo: 'amazonaws', logoColor: 'FF9900' },
-                    { label: 'Python', color: '3776AB', logo: 'python', logoColor: 'FFD43B' },
-                    { label: 'SQL', color: '336791', logo: 'postgresql', logoColor: 'FFFFFF' },
-                    { label: 'PySpark', color: 'E25A1C', logo: 'apachespark', logoColor: 'FFFFFF' },
-                    { label: 'ETL', color: '017CEE', logo: 'apacheairflow', logoColor: 'FFFFFF' },
-                    { label: 'Data Mesh', color: 'FF6F61', logo: 'databricks', logoColor: 'FFFFFF' },
-                    { label: 'Quicksight', color: '1D3F59', logo: 'amazonquicksight', logoColor: '00BFFF' },
-                    { label: 'Git', color: 'F05032', logo: 'git', logoColor: 'FFFFFF' },
-                    { label: 'Docker', color: '2496ED', logo: 'docker', logoColor: 'FFFFFF' },
-                    { label: 'ML', color: 'FF6F00', logo: 'tensorflow', logoColor: 'FFFFFF' },
-                    { label: 'Glue', color: '5A35A0', logo: 'awsglue', logoColor: 'FFFFFF' },
-                    { label: 'Athena', color: '1F6FEB', logo: 'amazonathena', logoColor: 'FFFFFF' },
-                    { label: 'Git Pages', color: '181717', logo: 'github', logoColor: 'FFFFFF' },
-                    { label: 'Markdown', color: '000000', logo: 'markdown', logoColor: 'FFFFFF' },
-                    { label: 'Stackspot', color: '2D2A7B', logo: 'devdotto', logoColor: 'FFFFFF' },
-                    { label: 'MLOps', color: '00ACC1', logo: 'mlflow', logoColor: 'FFFFFF' },
-                    { label: 'FastAPI', color: '009688', logo: 'fastapi', logoColor: 'FFFFFF' },
-                    { label: 'Pandas', color: '150458', logo: 'pandas', logoColor: 'FFFFFF' },
-                    { label: 'VS Code', color: '007ACC', logo: 'visualstudiocode', logoColor: 'FFFFFF' }
-                    ];
-
-            
-            const techStackContainer = document.getElementById('tech-stack-container');
-            technologyStackData.forEach(tech => {
-                const badgeLogoColor = tech.logoColor ? `&logoColor=${tech.logoColor}` : '';
-                const badgeUrl = `https://img.shields.io/badge/${encodeURIComponent(tech.label)}-${tech.color}?style=for-the-badge&logo=${tech.logo}${badgeLogoColor}`;
-                
-                const techCard = document.createElement('div');
-                techCard.className = 'tech-logo-card';
-                techCard.innerHTML = `
-                    <img src="${badgeUrl}" alt="${tech.label} Badge">
-                `;
-                techStackContainer.appendChild(techCard);
-            });
-
-            // Data for the "Minhas Qualidades em Destaque" carousel
-            const allQualitiesData = [
-           ];
-
-            // Data for the Radar Chart (all quantifiable characteristics)
-            const quantifiableSkillsForRadar = allQualitiesData.filter(q => q.percentage !== undefined && q.percentage !== -1);
-            const radarChartLabels = quantifiableSkillsForRadar.map(q => q.title);
-            const radarChartData = quantifiableSkillsForRadar.map(q => q.percentage);
-            const radarPointColors = quantifiableSkillsForRadar.map(q => q.color);
-
-            // --- START: INFINITE CAROUSEL LOGIC ---
-            const sortedQualities = [...quantifiableSkillsForRadar].sort((a, b) => b.percentage - a.percentage);
-            const top12QualitiesForCarousel = sortedQualities.slice(0, 12);
-            const originalCardsData = top12QualitiesForCarousel;
-
-            if (originalCardsData.length > 0) {
-                let currentCarouselIndex;
-                let isTransitioning = false;
-
-                const allCardsData = [...originalCardsData, ...originalCardsData, ...originalCardsData];
-
-                allCardsData.forEach((quality) => {
-                    const cardElement = document.createElement('div');
-                    cardElement.className = 'highlight-card';
-                    
-                    cardElement.innerHTML = `
-                        <div class="flex items-center mb-2" style="color: ${quality.color};">
-                            ${quality.icon}
-                            <h3 class="ml-2">${quality.title}</h3>
-                        </div>
-                        <p>${quality.description}</p>
-                    `;
-                    qualitiesCarouselTrack.appendChild(cardElement);
-                });
-
-                const cards = qualitiesCarouselTrack.querySelectorAll('.highlight-card');
-                currentCarouselIndex = originalCardsData.length;
-
-                function updateQualitiesCarousel(withTransition = true) {
-                    if (!cards.length) return;
-                    qualitiesCarouselTrack.style.transition = withTransition ? 'transform 0.5s ease-in-out' : 'none';
-                    const containerWidth = carouselContainer.offsetWidth;
-                    const activeCard = cards[currentCarouselIndex];
-                    if (!activeCard) return;
-                    const cardWidth = activeCard.offsetWidth;
-                    const cardOffsetLeft = activeCard.offsetLeft;
-                    const translateXValue = (containerWidth / 2) - (cardOffsetLeft + cardWidth / 2);
-                    qualitiesCarouselTrack.style.transform = `translateX(${translateXValue}px)`;
-                    cards.forEach((card, index) => {
-                        card.classList.toggle('active', index === currentCarouselIndex);
-                    });
-                }
-
-                qualitiesCarouselTrack.addEventListener('transitionend', () => {
-                    isTransitioning = false;
-                    if (currentCarouselIndex >= originalCardsData.length * 2) {
-                        currentCarouselIndex = originalCardsData.length;
-                        updateQualitiesCarousel(false);
-                    }
-                    if (currentCarouselIndex < originalCardsData.length) {
-                         currentCarouselIndex = originalCardsData.length * 2 -1;
-                         updateQualitiesCarousel(false);
-                    }
-                });
-
-                function nextQualitiesCard() {
-                    if (isTransitioning) return;
-                    isTransitioning = true;
-                    currentCarouselIndex++;
-                    updateQualitiesCarousel(true);
-                }
-                
-                setTimeout(() => {
-                    updateQualitiesCarousel(false);
-                    setInterval(nextQualitiesCard, 5000);
-                }, 100);
-
-                window.addEventListener('resize', () => updateQualitiesCarousel(false));
-            }
-            // --- END: INFINITE CAROUSEL LOGIC ---
-
-            // Data for the "Percepções sobre meu Trabalho" section
-            const perceptionsData = [
-  {
-    "title": "Referência técnica e colaborativa em dados",
-    "text": "É referência em conhecimento em dados na gerência de experiência PF. Participou da frente de capacitação e até hoje é lembrado pela grande performance que teve, além de sempre estar disposto a ajudar pares e parceiros. Mostrou conhecimento técnico capaz de resolver problemas de alta complexidade. Tenho certeza que irá alcançar o PDI o mais rápido possível."
-  },
-  {
-    "title": "Alta intensidade no uso de dados e espírito de equipe",
-    "text": "O Jhon usa os dados intensamente para solucionar problemas e é o verdadeiro vai de turma!"
-  },
-  {
-    "title": "Capacidade técnica sólida e contribuição em comunidade",
-    "text": "Possui grande capacidade técnica para desempenhar suas funções. Além disso sempre agrega aos demais companheiros com seus conteúdos sobre dados."
-  },
-  {
-    "title": "Domínio técnico e comunicação inspiradora",
-    "text": "Jhonata é um profissional incrível e extremamente qualificado, destacando-se por sua inteligência e habilidade impressionante com dados. Ele possui um profundo conhecimento em AWS, Python e diversos outros processos, sempre demonstrando paciência e atenção ao explicar conceitos complexos. Sua capacidade de comunicação não apenas facilita o entendimento, mas também inspira confiança e motivação."
-  },
-  {
-    "title": "Potencial para liderar e expandir impacto",
-    "text": "Possui bastante conhecimento técnico e busca aprender cada vez mais. Tem ambição em diminuir trabalho manual e pode performar bem em estudos complexos se houver oportunidade. Acredito que a liderança possa aumentar o nível de exposição à comunidade a fim de desenvolver mais a interação com diferentes times e assim torná-lo um profissional cada vez mais completo."
-  },
-  {
-    "title": "Espírito colaborativo e impacto técnico positivo",
-    "text": "Jhonata tem se destacado por sua excelente capacidade técnica, trazendo um impacto extremamente positivo no apoio ao time. Ele está sempre pronto para oferecer ajuda quando solicitado, mostrando um espírito de equipe exemplar e uma disposição admirável para colaborar. Sua atitude proativa e colaborativa é verdadeiramente inspiradora para todos ao seu redor!"
-  },
-  {
-    "title": "Protagonismo em projetos e referência na equipe",
-    "text": "Jhonata se destacou muito este ano, desenvolvendo diversos projetos grandes e complexos como as capacitações, o estudo de personas entre outros, além disso, venceu a batalha de dados com uma participação importantíssima no desenvolvimento da solução. Tem tomado cada vez mais a frente em agendas importantes e sido ponto focal para as tomadas de decisão da equipe quanto à novas tecnologias."
-  }
-]
-;
-
-            const perceptionsGrid = document.querySelector('#perceptions .perceptions-grid'); 
-            perceptionsData.forEach(p => {
-                const cardElement = document.createElement('div');
-                cardElement.className = 'perception-card'; /* Using the new class for styling */
-                cardElement.innerHTML = `
-                    <h3>${p.title}</h3>
-                    <p>&ldquo;${p.text}&rdquo;</p>
-                `;
-                perceptionsGrid.appendChild(cardElement);
-            });
-        });
-    </script>
+  <script src="main.js"></script>
 </body>
 </html>

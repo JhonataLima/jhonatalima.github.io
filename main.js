@@ -64,12 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // imageAlt: "Diagrama da migração de processos SAS para o ambiente AWS.",
                 // diagramDescription: "Este diagrama conceitua o processo de modernização e migração de fluxos analíticos e bases de dados do ambiente SAS legado para a infraestrutura escalável da AWS, no contexto do setor de seguros. Ele visualiza a transição de plataformas e a reestruturação dos dados na nuvem.",
                 details: [
-                    "Desenhei e implementei uma arquitetura modular e escalável para orquestrar múltiplos modelos de machine learning, contemplando pipelines de pré-processamento, inferência e disponibilização via APIs.",
-                    "Modelei soluções integradas de classificação (para predição de match entre candidatos e vagas), NLP (para análise semântica de entrevistas) e clusterização (para segmentação de perfis), todas com foco em aplicabilidade de negócio.",
-                    "Automatizei a ingestão e transformação de dados complexos em JSON, unificando múltiplas fontes (prospects, applicants e vagas) em uma estrutura flat robusta para consumo analítico e preditivo.",
-                    "Implementei endpoints REST com FastAPI e estrutura de versionamento via GitHub, organizando a trilha completa desde o protótipo até o deploy, com foco em reprodutibilidade e MLOps.",
-                    "Incluí estratégias de monitoramento e logging para rastreamento das inferências e criação de histórico para análise futura de performance dos modelos em produção.",
-                    "Projeto desenvolvido como entrega final do MBA em Machine Learning Engineering, consolidando habilidades em engenharia de dados, IA aplicada, arquitetura de soluções e documentação técnica orientada ao uso corporativo."
+                        "Atuei no desenvolvimento de bases especializadas críticas, anteriormente mantidas no SAS, para uma arquitetura moderna em AWS.",
+                        "Discovery e entendimento aprofundado das lógicas de negócios complexas dos processos que precisavam ser modernizados, garantindo a fidelidade dos dados.",
+                        "Contribuição para a otimização operacional e a capacidade analítica do time através da modernização da plataforma de dados."
                 ],
                 technologies: ["SAS", "AWS Athena", "AWS S3", "AWS StepFunctions", "AWS EventBridge", "Data Modernization", "Bases Especializadas"],
                 link: "#"
